@@ -1115,11 +1115,16 @@ Interface.ApplyInfoTab = function(Window)
     local Thumb = game:GetService("Players"):GetUserThumbnailAsync(LocalPlayer.UserId, ThumbType, ThumbSize)
     LeftBox:AddImage("Avatar", { Image = Thumb })
 
-    local CreditsBox = InfoTab:AddRightGroupbox("Credits")
+    
+        local CreditsBox = InfoTab:AddRightGroupbox("Credits")
     local Credits = {
-        "<font color='rgb(138, 43, 226)'>ar0sla — Script Creator (GitHub)</font>",
+        "<font color='rgb(50, 50, 50)'>ar0sla — Black Dude (GitHub)</font>",
+        "<font color='rgb(0, 255, 255)'>therealcookiemonsterof1966 — Original Creator</font>",
+        "<font color='rgb(0, 255, 255)'>bocaj111004 — Contributor</font>",
+        "<font color='rgb(255, 50, 50)'>WARNING: ar0sla stole this script from therealcookiemonster on GitHub!</font>",
         "<font color='rgb(50, 205, 50)'>" .. LocalPlayer.Name .. " — For Using This Script</font>",
     }
+    for _, Credit in ipairs(Credits) do CreditsBox:AddLabel(Credit, true) end
     for _, Credit in ipairs(Credits) do CreditsBox:AddLabel(Credit, true) end
 
     local ChangelogBox = InfoTab:AddRightGroupbox("Changelog")
